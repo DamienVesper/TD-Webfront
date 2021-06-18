@@ -4,5 +4,19 @@
 // Import IcoFont.
 @import '../css/icofont.min.css';
 
-// Import CSS variable palette.
+// Import components.
+@import './components/header.scss';
+@import './components/scrollbar.scss';
+
+// Import color palette.
 @import './palette.scss';
+
+html, body {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--ddblue);
+}
