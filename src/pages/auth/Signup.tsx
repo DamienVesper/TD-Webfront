@@ -1,12 +1,10 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
 
-import '../public/assets/scss/index.scss';
-
 /**
- * The application layout.
+ * The signup page.
  */
-class App extends React.Component {
+class Signup extends React.Component {
     render = () => {
         return (
             <div className="app">
@@ -16,4 +14,4 @@ class App extends React.Component {
     }
 }
 
-export default hot(module)(App);
+export default hot(module)(Signup);
