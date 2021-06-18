@@ -1,7 +1,7 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
 
-declare const API_URL;
+declare const API_URL: string;
 
 /**
  * Render account buttons based on current authentication state.
