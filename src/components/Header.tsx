@@ -41,21 +41,21 @@ class Header extends React.Component {
                                     </a>
                                     <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="profile-dropdown">
                                         <li>
-                                            <a href="/vip" className="dropdown-item get-vip-opt">
+                                            <a href="/vip" className="dropdown-item profile-get-vip-opt">
                                                 <i className="icofont icofont-diamond"></i>
                                                 Get VIP
                                             </a>
                                         </li>
                                         <li><hr className="dropdown-divider" /></li>
                                         <li>
-                                            <a href="/settings" className="dropdown-item">
+                                            <a href="/settings" className="dropdown-item profile-settings-opt">
                                                 <i className="icofont icofont-gear"></i>
                                                 Settings
                                             </a>
                                         </li>
                                         <li><hr className="dropdown-divider" /></li>
                                         <li>
-                                            <a href="/auth/logout" className="dropdown-item">
+                                            <a href="/auth/logout" className="dropdown-item profile-logout-opt">
                                                 <i className="icofont icofont-logout"></i>
                                                 Logout
                                             </a>

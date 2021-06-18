@@ -13,6 +13,14 @@ nav {
     background-color: var(--dblue);
 }
 
-.get-vip-opt:hover {
+.profile-get-vip-opt:hover {
     color: var(--vip);
+}
+
+.profile-settings-opt:hover {
+    color: $primary;
+}
+
+.profile-logout-opt:hover {
+    color: $danger;
 }
