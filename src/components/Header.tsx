@@ -26,9 +26,27 @@ class Header extends React.Component {
                                 </li>
                             </ul>
                             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                                <li className="nav-item">
+                                    <a href="/tos" className={`nav-link ${window.location.pathname === `/tos` ? `active disabled` : ``}`}>ToS</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a href="/staff" className={`nav-link ${window.location.pathname === `/staff` ? `active disabled` : ``}`}>Our Staff</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a href="https://discord.throwdown.tv/" target="_blank" rel="noreferrer" className="nav-link">Discord</a>
+                                </li>
                                 <li className="nav-item dropdown">
-                                    <a href="#" className="nav-link dropdown-toggle" id="profile-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profile</a>
-                                    <ul className="dropdown-menu" aria-labelledby="profile-dropdown">
+                                    <a href="#" className="nav-link btn" id="profile-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i className="icofont icofont-user-alt-7"></i>
+                                    </a>
+                                    <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="profile-dropdown">
+                                        <li>
+                                            <a href="/vip" className="dropdown-item get-vip-opt">
+                                                <i className="icofont icofont-diamond"></i>
+                                                Get VIP
+                                            </a>
+                                        </li>
+                                        <li><hr className="dropdown-divider" /></li>
                                         <li>
                                             <a href="/settings" className="dropdown-item">
                                                 <i className="icofont icofont-gear"></i>
@@ -43,15 +61,6 @@ class Header extends React.Component {
                                             </a>
                                         </li>
                                     </ul>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="/tos" className={`nav-link ${window.location.pathname === `/tos` ? `active disabled` : ``}`}>ToS</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="/staff" className={`nav-link ${window.location.pathname === `/staff` ? `active disabled` : ``}`}>Our Staff</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a href="https://discord.throwdown.tv/" target="_blank" rel="noreferrer" className="nav-link">Discord</a>
                                 </li>
                             </ul>
                         </div>
