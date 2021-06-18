@@ -1,6 +1,8 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
 
+declare const API_URL;
+
 /**
  * Render account buttons based on current authentication state.
  * @returns JSX representation of account button list.
@@ -19,7 +21,7 @@ const accountButtons = () => {
         );
     };
 
-    fetch(`https://throwdown.tv/authenticated`).then(data => data.json()).then(data => {
+    fetch(`${API_URL}/authenticated`).then(data => data.json()).then(data => {
         return data.json.isLoggedIn
             ? (
                 <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
