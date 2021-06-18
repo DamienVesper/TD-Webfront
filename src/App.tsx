@@ -14,6 +14,10 @@ import Footer from './components/Footer';
 import Login from './pages/auth/Login';
 import Signup from './pages/auth/Signup';
 
+import '../public/assets/scss/index.scss';
+
+import 'bootstrap';
+
 class App extends React.Component {
     render = () => {
         return (
