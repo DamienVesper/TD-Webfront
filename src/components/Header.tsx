@@ -1,45 +1,6 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
 
-declare const API_URL: string;
-
-/**
- * Render account buttons based on current authentication state.
- * @returns JSX representation of account button list.
- */
-const accountButtons = () => {
-    const loginBtns = () => {
-        return (
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                    <a href="/auth/login" className="btn btn-block btn-success my-2 my-sm-0">Login</a>
-                </li>
-                <li className="nav-item">
-                    <a href="/auth/login" className="btn btn-block btn-success my-2 my-sm-0">Signup</a>
-                </li>
-            </ul>
-        );
-    };
-
-    fetch(`${API_URL}/authenticated`).then(data => data.json()).then(data => {
-        return data.json.isLoggedIn
-            ? (
-                <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li className="nav-item">
-                        <a href="/auth/login" className="btn btn-block btn-success my-2 my-sm-0">Logout</a>
-                    </li>
-                </ul>
-            )
-            : loginBtns();
-    }).catch(err => {
-        // Handle the error.
-        console.log(err);
-
-        // Assume the state to be logged out.
-        return loginBtns();
-    });
-};
-
 /**
  * The header to appear at the top of every page.
  */
@@ -49,7 +10,7 @@ class Header extends React.Component {
             <header>
                 <nav className="navbar navbar-expand-lg navbar-dark">
                     <div className="container-fluid">
-                        <a href="/">
+                        <a href="/" className={window.location.href === `/` ? `disabled` : ``}>
                             <img src="/assets/img/header-logo.png" alt="Throwdown.TV logo" className="navbar-brand header-logo" />
                         </a>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,13 +19,20 @@ class Header extends React.Component {
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
-                                    <a href="/" className={`nav-link ${window.location.pathname === `/` ? `active disabled` : ``}`}>Home</a>
+                                    <a href="/staff" className={`nav-link ${window.location.pathname === `/browse` ? `active disabled` : ``}`}>Browse</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a href="/browse" className={`nav-link ${window.location.pathname === `/browse` ? `active disabled` : ``}`}>Browse</a>
+                                    <a href="/staff" className={`nav-link ${window.location.pathname === `/following` ? `active disabled` : ``}`}>Following</a>
                                 </li>
-                                <li className="nav-item">
-                                    <a href="/dashboard" className={`nav-link ${window.location.pathname === `/dashboard` ? `active disabled` : ``}`}>Dashboard</a>
+                            </ul>
+                            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                                <li className="nav-item dropdown">
+                                    <a href="#" className="nav-link dropdown-toggle" id="profile-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profile</a>
+                                    <ul className="dropdown-menu" aria-labelledby="profile-dropdown">
+                                        <li><a href="/dashboard" className="dropdown-item">Dashboard</a></li>
+                                        <li><hr className="dropdown-divider" /></li>
+                                        <li><a className="dropdown-item" href="/auth/logout">Logout</a></li>
+                                    </ul>
                                 </li>
                                 <li className="nav-item">
                                     <a href="/tos" className={`nav-link ${window.location.pathname === `/tos` ? `active disabled` : ``}`}>ToS</a>
@@ -73,10 +41,9 @@ class Header extends React.Component {
                                     <a href="/staff" className={`nav-link ${window.location.pathname === `/staff` ? `active disabled` : ``}`}>Our Staff</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a href="/discord" className="nav-link">Discord</a>
+                                    <a href="https://discord.throwdown.tv/" target="_blank" rel="noreferrer" className="nav-link">Discord</a>
                                 </li>
                             </ul>
-                            {accountButtons()}
                         </div>
                     </div>
                 </nav>
