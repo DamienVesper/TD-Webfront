@@ -6,6 +6,8 @@ import {
     Route
 } from 'react-router-dom';
 
+import { hot } from 'react-hot-loader';
+
 import Home from './pages/Home';
 
 import Header from './components/Header';
@@ -46,4 +48,4 @@ class App extends React.Component {
     }
 }
 
-export default App;
+export default hot(module)(App);
