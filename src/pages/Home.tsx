@@ -7,9 +7,9 @@ import { hot } from 'react-hot-loader';
 class Home extends React.Component {
     render = () => {
         return (
-            <div className="app">
-                <h1>Throwdown.TV</h1>
-            </div>
+            <main>
+                <h1 className="text-center mt-5">Throwdown.TV</h1>
+            </main>
         );
     }
 }

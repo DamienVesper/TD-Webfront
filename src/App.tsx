@@ -24,7 +24,7 @@ import 'jquery';
 class App extends React.Component {
     render = () => {
         return (
-            <div id="app">
+            <div id="app" className="text-light">
                 <Header />
                 <React.StrictMode>
                     <Router>
