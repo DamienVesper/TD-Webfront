@@ -19,25 +19,23 @@ class App extends React.Component {
         return (
             <div id="app">
                 <Header />
-                <main>
-                    <React.StrictMode>
-                        <Router>
-                            <Switch>
-                                <Route exact path="/">
-                                    <Home />
+                <React.StrictMode>
+                    <Router>
+                        <Switch>
+                            <Route exact path="/">
+                                <Home />
+                            </Route>
+                            <Route path="/auth">
+                                <Route exact path="/auth/login">
+                                    <Login />
                                 </Route>
-                                <Route path="/auth">
-                                    <Route exact path="/auth/login">
-                                        <Login />
-                                    </Route>
-                                    <Route exact path="/auth/signup">
-                                        <Signup />
-                                    </Route>
+                                <Route exact path="/auth/signup">
+                                    <Signup />
                                 </Route>
-                            </Switch>
-                        </Router>
-                    </React.StrictMode>
-                </main>
+                            </Route>
+                        </Switch>
+                    </Router>
+                </React.StrictMode>
                 <Footer />
             </div>
         );
