@@ -6,7 +6,10 @@
 
 // Import components.
 @import './components/header.scss';
-@import './components/scrollbar.scss';
+
+// Import utilities.
+@import './utils/scrollbar.scss';
+@import './utils/slider.scss';
 
 // Import color palette.
 @import './palette.scss';
