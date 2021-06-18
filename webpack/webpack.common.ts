@@ -8,7 +8,7 @@ interface Configuration extends Webpack.Configuration {
 }
 
 const config: Configuration = {
-    entry: path.resolve(__dirname, `../src/client/index.tsx`),
+    entry: path.resolve(__dirname, `../src/index.tsx`),
     module: {
         rules: [
             {
