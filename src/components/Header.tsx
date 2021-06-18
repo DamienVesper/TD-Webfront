@@ -19,19 +19,29 @@ class Header extends React.Component {
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li className="nav-item">
-                                    <a href="/staff" className={`nav-link ${window.location.pathname === `/browse` ? `active disabled` : ``}`}>Browse</a>
+                                    <a href="/browse" className={`nav-link ${window.location.pathname === `/browse` ? `active disabled` : ``}`}>Browse</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a href="/staff" className={`nav-link ${window.location.pathname === `/following` ? `active disabled` : ``}`}>Following</a>
+                                    <a href="/following" className={`nav-link ${window.location.pathname === `/following` ? `active disabled` : ``}`}>Following</a>
                                 </li>
                             </ul>
                             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                                 <li className="nav-item dropdown">
                                     <a href="#" className="nav-link dropdown-toggle" id="profile-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profile</a>
                                     <ul className="dropdown-menu" aria-labelledby="profile-dropdown">
-                                        <li><a href="/dashboard" className="dropdown-item">Dashboard</a></li>
+                                        <li>
+                                            <a href="/settings" className="dropdown-item">
+                                                <i className="icofont icofont-gear"></i>
+                                                Settings
+                                            </a>
+                                        </li>
                                         <li><hr className="dropdown-divider" /></li>
-                                        <li><a className="dropdown-item" href="/auth/logout">Logout</a></li>
+                                        <li>
+                                            <a href="/auth/logout" className="dropdown-item">
+                                                <i className="icofont icofont-logout"></i>
+                                                Logout
+                                            </a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li className="nav-item">
