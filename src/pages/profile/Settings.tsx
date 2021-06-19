@@ -9,7 +9,7 @@ import { hot } from 'react-hot-loader';
 class Dashboard extends React.Component {
     render = () => {
         return (
-            <main>
+            <main className="mx-5">
                 <h1 className="text-center my-5">Settings</h1>
                 <div className="row">
                     <div className="col-sm-6">

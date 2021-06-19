@@ -170,7 +170,7 @@ class Dashboard extends React.Component {
                                         <br />
 
                                         <input type="submit" id="dashboard-update-info" value="Update Stream Information" className="btn btn-primary btn-block" />
-                                        <a href="#" id="visit-livestream" className="btn btn-success btn-block dashboard-button mt-2" type="button" role="button">Livestream Page</a>
+                                        <a href="#" id="visit-livestream" className="btn btn-success btn-block dashboard-button mt-3" type="button" role="button">Livestream Page</a>
                                     </div>
                                 </form>
                             </div>
@@ -194,7 +194,7 @@ class Dashboard extends React.Component {
                                         </div>
                                     </div>
                                     <input type="submit" value="Copy Stream Key to Clipboard" id="copy-streamkey" className="btn btn-success btn-block" />
-                                    <input type="submit" value="Reset Stream Key" id="reset-streamkey" className="btn btn-primary btn-block mt-2" />
+                                    <input type="submit" value="Reset Stream Key" id="reset-streamkey" className="btn btn-primary btn-block mt-3" />
                                 </form>
                                 <p className="mt-3">Do <strong>NOT</strong> share your stream key with anyone. This key allows anyone to broadcast on your channel.</p>
                             </div>
