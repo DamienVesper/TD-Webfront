@@ -85,10 +85,10 @@ class Dashboard extends React.Component {
                     </div>
                     <div className="card card-body text-dark mt-4">
                         <h2 className="text-center my-3">Stickers (VIP Only)</h2>
-                        <p id="sticker-info" className="text-center">To add stickers, join the <a href="https://discord.throwdown.tv">Discord</a>.</p>
-                        <br />
+                        <p id="sticker-info" className="text-center mb-3">To add stickers, join the <a href="https://discord.throwdown.tv">Discord</a>.</p>
                         <div id="stickers"></div>
                     </div>
+                    <br />
                 </div>
             </main>
         );
