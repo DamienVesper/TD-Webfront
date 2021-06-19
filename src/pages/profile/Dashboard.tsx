@@ -67,9 +67,8 @@ class Dashboard extends React.Component {
                     <br />
                     <div className="card card-body text-dark">
                         <h2 className="text-center my-3">Stream Key</h2>
-                        <br />
 
-                        <label htmlFor="stream-key">Stream Key</label>
+                        <label htmlFor="stream-key" className="form-label">Stream Key</label>
                         <form action="/changestreamkey" method="post" id="streamkey-update-form">
                             <div className="form-group mb-3">
                                 <input type="password" className="form-control" id="stream-key" readOnly />

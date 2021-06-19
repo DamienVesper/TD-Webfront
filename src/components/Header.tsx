@@ -48,6 +48,12 @@ class Header extends React.Component {
                                         </li>
                                         <li><hr className="dropdown-divider" /></li>
                                         <li>
+                                            <a href="/dashboard" className="dropdown-item profile-settings-opt">
+                                                <i className="icofont icofont-dashboard"></i>
+                                                Dashboard
+                                            </a>
+                                        </li>
+                                        <li>
                                             <a href="/settings" className="dropdown-item profile-settings-opt">
                                                 <i className="icofont icofont-gear"></i>
                                                 Settings
