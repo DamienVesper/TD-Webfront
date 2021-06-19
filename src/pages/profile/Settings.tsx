@@ -29,13 +29,12 @@ class Dashboard extends React.Component {
                         <div className="card card-body text-dark mb-3">
                             <h2 className="text-center">Email</h2>
                             <form action="/api/account/email" method="post" id="account-generaloptions-form">
-                                <label className="switch">
-                                    <input type="checkbox" id="allow-notifications" name="allow-notifications" value="true" />
-                                    <span className="slider round"></span>
-                                </label>
-                                <label htmlFor="allow-notifications">Email Notifications</label>
-                                <input type="submit" name="account-generaloptions-form" id="account-generaloptions-update" value="Update General Settings"
-                                    className="btn btn-primary btn-block" />
+                                <div className="form-check form-switch">
+                                    <input type="checkbox" className="form-check-input" id="allow-notifications" name="allow-notifications" checked />
+                                    <label htmlFor="allow-notifications" className="form-check-label">Email Notifications</label>
+                                </div>
+
+                                <input type="submit" id="notification-settings-btn" name="notification-settings-btn" value="Update Notification Settings" className="btn btn-primary btn-block" />
                             </form>
                         </div>
                     </div>
