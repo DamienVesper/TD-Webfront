@@ -16,6 +16,11 @@
 // Import color palette.
 @import './palette.scss';
 
+// Transitions.
+* {
+    transition: 0.3s;
+}
+
 html, body {
     margin: 0;
     padding: 0;
