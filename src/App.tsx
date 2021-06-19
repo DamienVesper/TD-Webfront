@@ -19,7 +19,6 @@ import Signup from './pages/auth/Signup';
 import '../public/assets/scss/index.scss';
 
 import 'bootstrap';
-import 'jquery';
 
 class App extends React.Component {
     render = () => {
