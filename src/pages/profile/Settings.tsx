@@ -34,7 +34,7 @@ class Dashboard extends React.Component {
                                     <label htmlFor="allow-notifications" className="form-check-label">Email Notifications</label>
                                 </div>
 
-                                <input type="submit" id="notification-settings-btn" name="notification-settings-btn" value="Update Notification Settings" className="btn btn-primary btn-block" />
+                                <input type="submit" id="notification-settings-btn" name="notification-settings-btn" value="Update Notification Settings" className="btn btn-primary btn-block mt-3" />
                             </form>
                         </div>
                     </div>
