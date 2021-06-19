@@ -74,9 +74,9 @@ class Dashboard extends React.Component {
                                 </div>
                             </div>
                             <input type="submit" value="Copy Stream Key to Clipboard" id="copy-streamkey" className="btn btn-success btn-block" />
-                            <input type="submit" value="Reset Stream Key" id="reset-streamkey" className="btn btn-warning btn-block mt-3" />
+                            <input type="submit" value="Reset Stream Key" id="reset-streamkey" className="btn btn-primary btn-block mt-3" />
                         </form>
-                        <p>Do <strong>NOT</strong> share your stream key with anyone. This key allows anyone to broadcast on your channel.</p>
+                        <p className="mt-3">Do <strong>NOT</strong> share your stream key with anyone. This key allows anyone to broadcast on your channel.</p>
                     </div>
                     <div className="card card-body text-dark mt-4">
                         <h2 className="text-center my-3">Widgets</h2>
