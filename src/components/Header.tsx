@@ -1,6 +1,17 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
 
+import $ from 'jquery';
+
+declare const API_URL: string;
+
+$(() => {
+    fetch(`${API_URL}/authenticated`).then(data => data.json()).then((data: any) => {
+        if (!data.isLoggedIn) return $(`.nav-profile-menu`).hide();
+        $(`.profile-settings-opt`).attr(`href`, `/${data.username}`);
+    }).catch(() => $(`.nav-profile-menu`).hide());
+});
+
 /**
  * The header to appear at the top of every page.
  */
@@ -35,11 +46,18 @@ class Header extends React.Component {
                                 <li className="nav-item">
                                     <a href="https://discord.throwdown.tv/" target="_blank" rel="noreferrer" className="nav-link">Discord</a>
                                 </li>
-                                <li className="nav-item dropdown">
+                                <li className="nav-item dropdown nav-profile-menu">
                                     <a href="#" className="nav-link btn" id="profile-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i className="icofont icofont-user-alt-7"></i>
                                     </a>
                                     <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="profile-dropdown">
+                                        <li>
+                                            <a href="#" className="dropdown-item profile-settings-opt">
+                                                <i className="icofont icofont-people"></i>
+                                                Profile
+                                            </a>
+                                        </li>
+                                        <li><hr className="dropdown-divider" /></li>
                                         <li>
                                             <a href="/vip" className="dropdown-item profile-get-vip-opt">
                                                 <i className="icofont icofont-diamond"></i>
