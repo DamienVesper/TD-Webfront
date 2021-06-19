@@ -29,6 +29,9 @@ const setupLogin = () => {
                 $(`#login-button`).attr(`disabled`, `false`);
                 $(`#login-error`).show();
 
+                // This needs a re-implementation.
+                // hcaptcha.reset();
+
                 $(`#login-error-message`).text(res.errors);
                 console.error(`[ACCOUNT SERVER]: ${JSON.stringify(res.errors)}`);
             } else if (res.success) {
