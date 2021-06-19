@@ -14,7 +14,7 @@ class Dashboard extends React.Component {
             <main>
                 <div className="container">
                     <h1 className="text-center text-light my-5">Dashboard</h1>
-                    <div className="card card-body text-dark">
+                    <div className="card card-body text-dark mt-4">
                         <h2 className="text-center my-3">Stream Settings</h2>
                         <form action="/dashboard" method="post" id="dashboard-form">
                             <div className="form-group mb-3">
@@ -44,11 +44,8 @@ class Dashboard extends React.Component {
                             </div>
                         </form>
                     </div>
-                    <br />
-
-                    <div className="card card-body text-dark">
-                        <h2 className="text-center">RTMP Servers</h2>
-                        <br />
+                    <div className="card card-body text-dark mt-4">
+                        <h2 className="text-center my-3">RTMP Servers</h2>
                         <div className="rtmp-servers text-center d-flex justify-content-around">
                             <div className="card p-5">
                                 <span><b>US 01:</b></span>
@@ -64,40 +61,34 @@ class Dashboard extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <br />
-                    <div className="card card-body text-dark">
+                    <div className="card card-body text-dark mt-4">
                         <h2 className="text-center my-3">Stream Key</h2>
 
                         <label htmlFor="stream-key" className="form-label">Stream Key</label>
-                        <form action="/changestreamkey" method="post" id="streamkey-update-form">
+                        <form action="/api/change-stream-key" method="post" id="streamkey-update-form">
                             <div className="form-group mb-3">
-                                <input type="password" className="form-control" id="stream-key" readOnly />
-                                <p>
-                                    <input type="checkbox" id="reveal-stream-key" />
-                                    Reveal Stream Key
-                                </p>
-
-                                <input type="submit" value="Copy Stream Key to Clipboard" id="copy-streamkey" className="btn btn-success btn-block" />
-                                <input type="submit" value="Reset Stream Key" id="reset-streamkey" className="btn btn-warning btn-block mt-3" />
+                                <input type="password" className="form-control mb-2" id="stream-key" readOnly />
+                                <div className="form-check">
+                                    <input type="checkbox" id="reveal-stream-key" className="form-check-input" />
+                                    <label htmlFor="reveal-stream-key" className="form-check-label">Reveal Stream Key</label>
+                                </div>
                             </div>
+                            <input type="submit" value="Copy Stream Key to Clipboard" id="copy-streamkey" className="btn btn-success btn-block" />
+                            <input type="submit" value="Reset Stream Key" id="reset-streamkey" className="btn btn-warning btn-block mt-3" />
                         </form>
-                        <p>Do <b>NOT</b> share your stream key with anyone. This key allows anyone to broadcast on your channel.</p>
+                        <p>Do <strong>NOT</strong> share your stream key with anyone. This key allows anyone to broadcast on your channel.</p>
                     </div>
-                    <br />
-                    <div className="card card-body text-dark">
-                        <h2 className="text-center">Widgets</h2>
-                        <br />
-                        <label htmlFor="chat-link">Chat Widget</label>
+                    <div className="card card-body text-dark mt-4">
+                        <h2 className="text-center my-3">Widgets</h2>
+                        <label htmlFor="chat-link" className="form-label">Chat</label>
                         <input type="text" className="form-control" id="chat-link" readOnly />
                     </div>
-                    <br />
-                    <div className="card card-body text-dark">
-                        <h2 className="text-center">Stickers (VIP Only)</h2>
-                        <p id="sticker-info" className="text-center">To add stickers, join the <a href="https://discord.me/throwdowntv">Discord</a></p>
+                    <div className="card card-body text-dark mt-4">
+                        <h2 className="text-center my-3">Stickers (VIP Only)</h2>
+                        <p id="sticker-info" className="text-center">To add stickers, join the <a href="https://discord.throwdown.tv">Discord</a>.</p>
                         <br />
                         <div id="stickers"></div>
                     </div>
-                    <br />
                 </div>
             </main>
         );
