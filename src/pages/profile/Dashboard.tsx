@@ -30,17 +30,19 @@ class Dashboard extends React.Component {
                                 <input type="text" id="donation-link" name="donation-link" className="form-control" placeholder="Enter a URL to your donation page" />
                             </div>
                             <div className="form-group mb-3">
-                                <div>
-                                    <label className="switch">
-                                        <input type="checkbox" id="allow-global-emotes" name="allow-global-emotes" value="true" />
-                                        <span className="slider round"></span>
+                                <div className="form-check form-switch">
+                                    <input type="checkbox" className="form-check-input" id="allow-global-emotes" name="allow-global-emotes" value="true" />
+                                    <label htmlFor="allow-global-emotes" className="form-check-label">
+                                        Allow use of Global Stickers.
+                                        (If enabled, stickers from other channels can be used on your chat)
                                     </label>
-                                    <label htmlFor="allow-global-emotes">Allow use of Global Stickers <span>(If enabled, stickers from other channels can be used on your channel&aposs chat)</span></label>
                                 </div>
                                 <br />
-                                <input type="submit" id="dashboard-update-info" value="Update Stream Information"
-                                    className="btn btn-primary btn-block" />
-                                <a id="visit-livestream" type="button" className="btn btn-success dashboard-button" role="button">Livestream Page</a>
+
+                                <div className="d-grid gap-2 mt-3">
+                                    <input type="submit" id="dashboard-update-info" value="Update Stream Information" className="btn btn-primary btn-block" />
+                                    <a href="#" id="visit-livestream" className="btn btn-success dashboard-button" type="button" role="button">Livestream Page</a>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -76,8 +78,10 @@ class Dashboard extends React.Component {
                                     <input type="checkbox" id="reveal-stream-key" />
                                     Reveal Stream Key
                                 </p>
-                                <input type="submit" value="Copy Stream Key to Clipboard" id="copy-streamkey" className="btn btn-success btn-block" />
-                                <input type="submit" value="Reset Stream Key" id="reset-streamkey" className="btn btn-warning btn-block" />
+                                <div className="d-grid gap-2 mt-3">
+                                    <input type="submit" value="Copy Stream Key to Clipboard" id="copy-streamkey" className="btn btn-success btn-block" />
+                                    <input type="submit" value="Reset Stream Key" id="reset-streamkey" className="btn btn-warning btn-block" />
+                                </div>
                             </div>
                         </form>
                         <p>Do <b>NOT</b> share your stream key with anyone. This key allows anyone to broadcast on your channel.</p>
@@ -96,6 +100,7 @@ class Dashboard extends React.Component {
                         <br />
                         <div id="stickers"></div>
                     </div>
+                    <br />
                 </div>
             </main>
         );
