@@ -39,10 +39,8 @@ class Dashboard extends React.Component {
                                 </div>
                                 <br />
 
-                                <div className="d-grid gap-2 mt-3">
-                                    <input type="submit" id="dashboard-update-info" value="Update Stream Information" className="btn btn-primary btn-block" />
-                                    <a href="#" id="visit-livestream" className="btn btn-success dashboard-button" type="button" role="button">Livestream Page</a>
-                                </div>
+                                <input type="submit" id="dashboard-update-info" value="Update Stream Information" className="btn btn-primary btn-block" />
+                                <a href="#" id="visit-livestream" className="btn btn-success btn-block dashboard-button mt-2" type="button" role="button">Livestream Page</a>
                             </div>
                         </form>
                     </div>
