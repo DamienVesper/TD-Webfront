@@ -16,6 +16,8 @@ import Footer from './components/Footer';
 import Login from './pages/auth/Login';
 import Signup from './pages/auth/Signup';
 
+import Error404 from './404';
+
 import '../public/assets/scss/index.scss';
 
 import 'bootstrap';
@@ -37,6 +39,9 @@ class App extends React.Component {
                             <Route exact path="/auth/signup">
                                 <Signup />
                             </Route>
+                        </Route>
+                        <Route path="/">
+                            <Error404 />
                         </Route>
                     </Switch>
                 </Router>
