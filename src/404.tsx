@@ -1,7 +1,7 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
 
-import '../public/assets/scss/pages/error.scss';
+// import '../public/assets/scss/pages/error.scss';
 
 /**
  * The 404 page.
