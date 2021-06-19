@@ -15,16 +15,14 @@ class Dashboard extends React.Component {
                     <div className="col-sm-6">
                         <div className="card card-body text-dark mb-3">
                             <h2 className="text-center">Account</h2>
-                            <label htmlFor="display-name">Current Username: <span id="current-username"></span></label>
-                            <label htmlFor="display-name">Account Status: <span id="current-account-status"></span></label>
+                            <label htmlFor="display-name" className="form-label">Current Username: <span id="current-username"></span></label>
+                            <label htmlFor="display-name" className="form-label">Account Status: <span id="current-account-status"></span></label>
                             <form action="/accountoptions/displayname" method="post" id="account-options-form">
                                 <div className="form-group">
-                                    <label htmlFor="display-name">Display Name <span>(You may only change the Capitalization)</span></label>
-                                    <input type="text" id="display-name" name="display-name" className="form-control"
-                                        placeholder="Change name Capitalization" maxLength={80} />
-                                    <br />
-                                    <input type="submit" id="account-update-info" value="Update Display Name"
-                                        className="btn btn-primary btn-block" />
+                                    <label htmlFor="display-name" className="form-label">Display Name</label>
+                                    <input type="text" id="display-name" name="display-name" className="form-control" placeholder="Change display name" maxLength={20} />
+                                    <span className="form-text text-dark">You may only change the capitalization, not the actual spelling.</span>
+                                    <input type="submit" id="account-update-info" value="Update Display Name" className="btn btn-primary btn-block mt-3" />
                                 </div>
                             </form>
                         </div>
@@ -34,20 +32,6 @@ class Dashboard extends React.Component {
                     </div>
                 </div>
                 <div className="card card-body text-dark">
-                    <h2 className="text-center">Account Settings</h2>
-                    <label htmlFor="display-name">Current Username: <span id="current-username"></span></label>
-                    <label htmlFor="display-name">Account Status: <span id="current-account-status"></span></label>
-                    <form action="/accountoptions/displayname" method="post" id="account-options-form">
-                        <div className="form-group">
-                            <label htmlFor="display-name">Display Name <span>(You may only change the Capitalization)</span></label>
-                            <input type="text" id="display-name" name="display-name" className="form-control"
-                                placeholder="Change name Capitalization" maxLength={80} />
-                            <br />
-                            <input type="submit" id="account-update-info" value="Update Display Name"
-                                className="btn btn-primary btn-block" />
-                        </div>
-                    </form>
-                    <br />
                     <h3 className="text-center">General Settings</h3>
                     <form action="/accountoptions/generaloptions" method="post" id="account-generaloptions-form">
                         <label className="switch">
