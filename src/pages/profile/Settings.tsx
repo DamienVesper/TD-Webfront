@@ -27,7 +27,7 @@ class Dashboard extends React.Component {
                     </div>
                     <div className="col-sm-6">
                         <div className="card card-body text-dark mb-3">
-                            <h2 className="text-center">Email</h2>
+                            <h2 className="text-center">Notifications</h2>
                             <form action="/api/account/email" method="post" id="account-generaloptions-form">
                                 <div className="form-check form-switch">
                                     <input type="checkbox" className="form-check-input" id="allow-notifications" name="allow-notifications" checked />
