@@ -63,11 +63,11 @@ class Login extends React.Component {
                             </div>
 
                             <div className="form-group mb-3">
-                                <label htmlFor="username">Username</label>
+                                <label htmlFor="username" className="form-label">Username</label>
                                 <input type="username" name="login-username" className="form-control mb-3" placeholder="Enter Username" autoComplete="username" required />
                             </div>
                             <div className="form-group mb-3">
-                                <label htmlFor="password">Password</label>
+                                <label htmlFor="password" className="form-label">Password</label>
                                 <input type="password" name="login-password" className="form-control mb-3" placeholder="Enter Password" autoComplete="new-password" required />
                             </div>
                             <div className="form-group mb-3">
