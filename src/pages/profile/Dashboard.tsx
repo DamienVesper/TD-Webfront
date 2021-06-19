@@ -12,7 +12,7 @@ class Dashboard extends React.Component {
     render = () => {
         return (
             <main>
-                <div className="container w-50">
+                <div className="container">
                     <h1 className="text-center text-light my-5">Dashboard</h1>
                     <div className="card card-body text-dark">
                         <h2 className="text-center my-3">Stream Settings</h2>
@@ -76,10 +76,9 @@ class Dashboard extends React.Component {
                                     <input type="checkbox" id="reveal-stream-key" />
                                     Reveal Stream Key
                                 </p>
-                                <div className="d-grid gap-2 mt-3">
-                                    <input type="submit" value="Copy Stream Key to Clipboard" id="copy-streamkey" className="btn btn-success btn-block" />
-                                    <input type="submit" value="Reset Stream Key" id="reset-streamkey" className="btn btn-warning btn-block" />
-                                </div>
+
+                                <input type="submit" value="Copy Stream Key to Clipboard" id="copy-streamkey" className="btn btn-success btn-block" />
+                                <input type="submit" value="Reset Stream Key" id="reset-streamkey" className="btn btn-warning btn-block mt-3" />
                             </div>
                         </form>
                         <p>Do <b>NOT</b> share your stream key with anyone. This key allows anyone to broadcast on your channel.</p>

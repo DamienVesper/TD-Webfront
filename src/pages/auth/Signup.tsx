@@ -52,7 +52,7 @@ class Signup extends React.Component {
     render = () => {
         return (
             <main>
-                <div className="container w-50 mt-5">
+                <div className="container mt-5">
                     <div className="card card-body text-dark">
                         <h1 className="text-center">Sign Up</h1>
                         <form action="/auth/signup" method="POST" id="login-form">

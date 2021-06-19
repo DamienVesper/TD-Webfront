@@ -54,7 +54,7 @@ class Login extends React.Component {
     render = () => {
         return (
             <main>
-                <div className="container w-50 mt-5">
+                <div className="container mt-5">
                     <div className="card card-body text-dark">
                         <h1 className="text-center">Log In</h1>
                         <form action="/auth/login" method="POST" id="login-form">
