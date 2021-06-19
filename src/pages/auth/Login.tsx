@@ -54,7 +54,7 @@ class Login extends React.Component {
                 <div className="container w-50 mt-5">
                     <div className="card card-body text-dark">
                         <h1 className="text-center">Log In</h1>
-                        <form action="/login" method="POST" id="login-form">
+                        <form action="/auth/login" method="POST" id="login-form">
                             <div id="login-error" className="alert alert-danger alert-dismissible fade show" role="alert">
                                 <span id="login-error-message"></span>
                             </div>
@@ -75,9 +75,10 @@ class Login extends React.Component {
                             </div>
 
                             <HCaptcha sitekey="b5bed0d5-a077-493d-9ae0-3a66e4d05a6c" />
-                            <br />
 
-                            <input type="submit" id="login-button" value="Login" className="btn btn-primary btn-block" />
+                            <div className="d-grid gap-2 mt-3">
+                                <input type="submit" value="Login" id="login-button" className="btn btn-primary btn-block" />
+                            </div>
                         </form>
                     </div>
                 </div>
