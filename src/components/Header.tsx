@@ -6,7 +6,7 @@ import $ from 'jquery';
 declare const API_URL: string;
 
 $(() => {
-    fetch(`${API_URL}/authenticated`).then(data => data.json()).then((data: any) => {
+    fetch(`${API_URL}/auth/authenticated`).then(data => data.json()).then((data: any) => {
         if (!data.isLoggedIn) return $(`.nav-profile-menu`).hide();
         $(`.profile-settings-opt`).attr(`href`, `/${data.username}`);
     }).catch(() => $(`.nav-profile-menu`).hide());

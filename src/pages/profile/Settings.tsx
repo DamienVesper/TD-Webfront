@@ -15,7 +15,7 @@ class Dashboard extends React.Component {
                     <div className="col-sm-6">
                         <div className="card card-body text-dark mb-3">
                             <h2 className="text-center">Display Name</h2>
-                            <form action="/accountoptions/displayname" method="post" id="account-options-form">
+                            <form action="/api/account/display-name" method="post" id="account-options-form">
                                 <div className="form-group">
                                     <label htmlFor="display-name" className="form-label">Display Name</label>
                                     <input type="text" id="display-name" name="display-name" className="form-control" placeholder="Change display name" maxLength={20} />
@@ -26,20 +26,22 @@ class Dashboard extends React.Component {
                         </div>
                     </div>
                     <div className="col-sm-6">
-
+                        <div className="card card-body text-dark mb-3">
+                            <h2 className="text-center">Email</h2>
+                            <form action="/api/account/email" method="post" id="account-generaloptions-form">
+                                <label className="switch">
+                                    <input type="checkbox" id="allow-notifications" name="allow-notifications" value="true" />
+                                    <span className="slider round"></span>
+                                </label>
+                                <label htmlFor="allow-notifications">Email Notifications</label>
+                                <input type="submit" name="account-generaloptions-form" id="account-generaloptions-update" value="Update General Settings"
+                                    className="btn btn-primary btn-block" />
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <div className="card card-body text-dark">
                     <h3 className="text-center">General Settings</h3>
-                    <form action="/accountoptions/generaloptions" method="post" id="account-generaloptions-form">
-                        <label className="switch">
-                            <input type="checkbox" id="allow-notifications" name="allow-notifications" value="true" />
-                            <span className="slider round"></span>
-                        </label>
-                        <label htmlFor="allow-notifications">Email Notifications</label>
-                        <input type="submit" name="account-generaloptions-form" id="account-generaloptions-update" value="Update General Settings"
-                            className="btn btn-primary btn-block" />
-                    </form>
                     <br />
                     <form action="/accountoptions/updatepfp" method="post" id="account-pfp-form">
                         <div className="form-group">
