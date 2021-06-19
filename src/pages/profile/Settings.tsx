@@ -14,9 +14,7 @@ class Dashboard extends React.Component {
                 <div className="row">
                     <div className="col-sm-6">
                         <div className="card card-body text-dark mb-3">
-                            <h2 className="text-center">Account</h2>
-                            <label htmlFor="display-name" className="form-label">Current Username: <span id="current-username"></span></label>
-                            <label htmlFor="display-name" className="form-label">Account Status: <span id="current-account-status"></span></label>
+                            <h2 className="text-center">Display Name</h2>
                             <form action="/accountoptions/displayname" method="post" id="account-options-form">
                                 <div className="form-group">
                                     <label htmlFor="display-name" className="form-label">Display Name</label>
