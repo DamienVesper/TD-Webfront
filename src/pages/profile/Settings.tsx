@@ -10,6 +10,7 @@ class Dashboard extends React.Component {
     render = () => {
         return (
             <main>
+                <h1 className="text-center my-5">Settings</h1>
                 <div className="card card-body text-dark">
                     <h2 className="text-center">Account Settings</h2>
                     <label htmlFor="display-name">Current Username: <span id="current-username"></span></label>

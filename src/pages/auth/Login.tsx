@@ -8,7 +8,7 @@ import HCaptcha from '@hcaptcha/react-hcaptcha';
  * Helper function to setup login page.
  */
 const setupLogin = () => {
-    $(document).ready(() => {
+    $(() => {
         $(`#login-error`).hide();
         $(`#login-success`).hide();
     });

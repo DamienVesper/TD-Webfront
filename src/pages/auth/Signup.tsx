@@ -8,7 +8,7 @@ import HCaptcha from '@hcaptcha/react-hcaptcha';
  * Helper function to setup signup page.
  */
 const setupSignup = () => {
-    $(document).ready(() => $(`#signup-error`).hide());
+    $(() => $(`#signup-error`).hide());
 
     $(`#signup-button`).on(`click`, e => {
         e.preventDefault();

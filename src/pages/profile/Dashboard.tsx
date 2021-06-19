@@ -1,7 +1,7 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
 
-// import $ from 'jquery';
+import $ from 'jquery';
 
 import '../../../public/assets/scss/pages/dashboard.scss';
 
@@ -12,7 +12,7 @@ class Dashboard extends React.Component {
     render = () => {
         return (
             <main>
-                <h1 className="text-center text-light mt-5 mb-4">Dashboard</h1>
+                <h1 className="text-center mt-5 mb-4">Dashboard</h1>
                 <div className="mx-5">
                     <div className="row">
                         <div className="col-sm-6">
@@ -35,8 +35,8 @@ class Dashboard extends React.Component {
                                         <div className="form-check form-switch">
                                             <input type="checkbox" className="form-check-input" id="allow-global-emotes" name="allow-global-emotes" value="true" />
                                             <label htmlFor="allow-global-emotes" className="form-check-label">
-                                        Allow use of Global Stickers.
-                                        (If enabled, stickers from other channels can be used on your chat)
+                                                Allow use of Global Stickers.
+                                                (If enabled, stickers from other channels can be used on your chat)
                                             </label>
                                         </div>
                                         <br />
