@@ -5,6 +5,134 @@ import $ from 'jquery';
 
 import '../../../public/assets/scss/pages/dashboard.scss';
 
+declare const API_URL: string;
+
+$(() => {
+    fetch(`${API_URL}/authenticated`).then(data => data.json()).then(data => {
+        const chatURL = `https://throwdown.tv/widgets/chat/${data.username}/`;
+        $(`#chat-link`)
+            .val(chatURL)
+            .attr(`href`, chatURL);
+        $(`#visit-livestream`).attr(`href`, `/${data.username}`);
+
+        fetch(`${API_URL}/api/stream-data`).then(data => data.json()).then(data => {
+            $(`#current-username`).text(data.username);
+            $(`#stream-title`).val(data.streamTitle);
+            $(`#display-name`).val(data.displayName);
+            $(`#stream-description`).val(data.streamDescription);
+            $(`#donation-link`).val(data.donationLink);
+            $(`#stream-key`).val(data.streamKey);
+            $(`#display-avatar`).val(data.avatarURL);
+            $.get(data.avatarURL)
+                .done(() => {
+                    $(`#current-display-avatar`).attr(`src`, `${data.avatarURL}`);
+                }).fail(() => {
+                    $(`#current-display-avatar`).attr(`src`, `/assets/img/defaultpfp.png`);
+                });
+
+            if (data.isStaff) {
+                $(`#current-account-status`).text(`Staff`);
+                $(`#current-account-status`).css(`color`, `#032cfc`);
+            } else if (data.isVip) {
+                $(`#current-account-status`).text(`VIP`);
+                $(`#current-account-status`).css(`color`, `orange`);
+            } else {
+                $(`#current-account-status`).text(`Free`);
+                $(`#current-account-status`).css(`color`, `grey`);
+                $(`#sticker-info`).html(`You are not a VIP Member, <a href="/vip">Subscribe</a> now to get 5 Sticker Slots`);
+            }
+
+            $(`#allow-notifications`).attr(`checked`, data.notifications);
+            $(`#allow-global-emotes`).attr(`checked`, data.allowGlobalEmotes);
+        });
+    });
+
+    fetch(`${API_URL}/api/get-stickers`).then(data => data.json()).then(data => {
+        if (data.length === 0) return $(`#stickers`).append(`<p class="text-center" style="font-size: 25px;">No Stickers Available for this Channel</p>`);
+
+        data.forEach((sticker: any) => {
+            $(`#stickers`).append(`<p class="text-center" style="font-size: 15px;">/sticker <span style="font-weight: bold;">${sticker.stickerName}</span></p>`);
+            $(`#stickers`).append(`<img src="${sticker.path}" style="max-height: 70px;" class="center-align-image"></img>`);
+        });
+    });
+
+    $(`#dashboard-update-info`).on(`click`, e => {
+        e.preventDefault();
+
+        $(`#dashboard-update-info`).attr(`disabled`, `true`);
+
+        $.ajax({
+            type: `post`,
+            url: `/dashboard`,
+            data: $(`#dashboard-form`).serialize()
+        }).then(() => window.location.reload());
+    });
+
+    $(`#account-update-pfp`).on(`click`, e => {
+        e.preventDefault();
+
+        $(`#account-update-pfp`).attr(`disabled`, `true`);
+
+        $.ajax({
+            type: `post`,
+            url: `/accountoptions/updatepfp`,
+            data: $(`#account-pfp-form`).serialize()
+        }).then(() => window.location.reload());
+    });
+
+    $(`#account-update-info`).on(`click`, e => {
+        e.preventDefault();
+
+        $(`#account-update-info`).attr(`disabled`, `true`);
+
+        $.ajax({
+            type: `post`,
+            url: `/accountoptions/updateinfo`,
+            data: $(`#account-options-form`).serialize()
+        }).then(() => window.location.reload());
+    });
+
+    $(`#account-generaloptions-update`).on(`click`, e => {
+        e.preventDefault();
+
+        $.ajax({
+            type: `post`,
+            url: `/accountoptions/generaloptions`,
+            data: $(`#account-generaloptions-form`).serialize()
+        }).then(() => window.location.reload());
+    });
+
+    $(`#reset-streamkey`).on(`click`, e => {
+        e.preventDefault();
+        $(`#reset-streamkey`).attr(`disabled`, `true`);
+
+        $.ajax({
+            type: `post`,
+            url: `/changestreamkey`
+        }).then(() => window.location.reload());
+    });
+
+    $(`#copy-streamkey`).on(`click`, e => {
+        e.preventDefault();
+        navigator.clipboard.writeText($(`#stream-key`).val().toString()).then(() => {
+            $(`#copy-streamkey`).attr(`disabled`, `true`);
+            $(`#copy-streamkey`).val(`Copied to Clipboard!`);
+
+            setTimeout(() => {
+                $(`#copy-streamkey`).attr(`disabled`, `false`);
+                $(`#copy-streamkey`).val(`Copy Stream Key to Clipboard`);
+            }, 3e3);
+        }, () => {
+            alert(`Failure to copy. Check permissions for clipboard`);
+        });
+    });
+
+    $(`#reveal-stream-key`).trigger(`change`, () => {
+        const streamKey: HTMLInputElement = document.querySelector(`#stream-key`);
+        $(`#stream-key`).attr(`type`, streamKey.type === `password` ? `text` : `password`);
+    });
+});
+
 /**
  * The dashboard page.
  */

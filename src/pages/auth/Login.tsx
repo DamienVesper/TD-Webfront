@@ -4,6 +4,8 @@ import { hot } from 'react-hot-loader';
 import $ from 'jquery';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 
+declare const API_URL: string;
+
 /**
  * Helper function to setup login page.
  */
@@ -22,7 +24,7 @@ const setupLogin = () => {
 
         $.ajax({
             type: `post`,
-            url: `/login`,
+            url: `${API_URL}/auth/login`,
             data: $(`#login-form`).serialize()
         }).then(res => {
             if (res.errors) {

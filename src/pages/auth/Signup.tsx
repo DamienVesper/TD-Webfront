@@ -4,6 +4,8 @@ import { hot } from 'react-hot-loader';
 import $ from 'jquery';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 
+declare const API_URL: string;
+
 /**
  * Helper function to setup signup page.
  */
@@ -18,7 +20,7 @@ const setupSignup = () => {
 
         $.ajax({
             type: `post`,
-            url: `/signup`,
+            url: `${API_URL}/auth/signup`,
             data: $(`#signup-form`).serialize()
         }).then(res => {
             if (res.errors) {
