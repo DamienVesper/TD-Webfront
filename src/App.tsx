@@ -28,7 +28,7 @@ import 'bootstrap';
 class App extends React.Component {
     render = () => {
         return (
-            <div id="app" className="text-light">
+            <div id="app" className="text-light d-flex flex-column h-100">
                 <Header />
                 <Router>
                     <Switch>

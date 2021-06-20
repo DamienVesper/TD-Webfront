@@ -30,7 +30,7 @@ class Dashboard extends React.Component {
                             <h2 className="text-center my-3">Notifications</h2>
                             <form action="/settings/email-notifications" method="POST" id="account-generaloptions-form">
                                 <div className="form-check form-switch">
-                                    <input type="checkbox" className="form-check-input" id="allow-notifications" name="allow-notifications" checked />
+                                    <input type="checkbox" className="form-check-input" id="allow-notifications" name="allow-notifications" defaultChecked />
                                     <label htmlFor="allow-notifications" className="form-check-label">Email Notifications</label>
                                 </div>
 

@@ -21,14 +21,14 @@
     transition: 0.3s;
 }
 
-html, body {
+html, body, #root, #app {
     margin: 0;
     padding: 0;
 
     width: 100%;
     height: 100%;
 
-    background-color: var(--ddblue);
+    background-color: var(--dddblue);
 }
 
 // Icofont icons should have a bit of padding besides them.
