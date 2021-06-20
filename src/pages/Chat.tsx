@@ -8,10 +8,6 @@ import '../../public/assets/scss/pages/chat.scss';
 
 declare const API_URL: string;
 
-/**
- * The Chat widget.
- */
-
 $(() => {
     $(`#chat-input`).keydown(e => {
         if (e.key === `Enter`) e.preventDefault();
@@ -127,6 +123,9 @@ $(() => {
     });
 });
 
+/**
+ * The Chat page.
+ */
 class Chat extends React.Component {
     render = () => {
         return (
