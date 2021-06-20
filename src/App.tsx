@@ -1,3 +1,4 @@
+// React libraries.
 import React from 'react';
 
 import {
@@ -8,26 +9,33 @@ import {
 
 import { hot } from 'react-hot-loader';
 
+// Home page.
 import Home from './pages/Home';
 
+// Page components.
 import Header from './components/Header';
 import Footer from './components/Footer';
 
+// Authentication pages.
 import Login from './pages/auth/Login';
 import Signup from './pages/auth/Signup';
 
-import Dashboard from './pages/profile/Dashboard';
-import Settings from './pages/profile/Settings';
+// Settings pages.
+import Dashboard from './pages/settings/Dashboard';
+import Settings from './pages/settings/Settings';
 
-import Streamer from './pages/Streamer';
-
+// Legal pages.
 import ToS from './pages/legal/ToS';
 import PrivacyPolicy from './pages/legal/PrivacyPolicy';
 
+// Widgets.
 import ChatWidget from './widgets/Chat';
 
-import Chat from './Chat';
+// Templating pages.
+import Streamer from './pages/Streamer';
+import Chat from './pages/Chat';
 
+// Error pages.
 import Error404 from './errors/404';
 
 import '../public/assets/scss/index.scss';
@@ -89,7 +97,7 @@ class App extends React.Component {
                         </Route>
 
                         {/* Streamer Pages */}
-                        <Route path="/:username">
+                        <Route path="/">
                             <Streamer />
                         </Route>
 

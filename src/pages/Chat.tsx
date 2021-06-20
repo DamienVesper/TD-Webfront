@@ -4,7 +4,7 @@ import { hot } from 'react-hot-loader';
 import { io } from 'socket.io-client';
 import $ from 'jquery';
 
-import '../public/assets/scss/pages/chat.scss';
+import '../../public/assets/scss/pages/chat.scss';
 
 declare const API_URL: string;
 
