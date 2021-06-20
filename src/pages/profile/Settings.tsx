@@ -15,7 +15,7 @@ class Dashboard extends React.Component {
                 <h1 className="text-center my-5">Settings</h1>
                 <div className="row">
                     <div className="col-sm-6">
-                        <div className="card card-body text-dark mb-3">
+                        <div className="card card-body text-dark my-4">
                             <h2 className="text-center my-3">Display Name</h2>
                             <form action="/settings/display-name" method="POST" id="account-options-form">
                                 <div className="form-group">
@@ -26,7 +26,7 @@ class Dashboard extends React.Component {
                                 <input type="submit" id="account-update-info" value="Update Display Name" className="btn btn-primary btn-block mt-3" />
                             </form>
                         </div>
-                        <div className="card card-body text-dark mb-3">
+                        <div className="card card-body text-dark my-4">
                             <h2 className="text-center my-3">Notifications</h2>
                             <form action="/settings/email-notifications" method="POST" id="account-generaloptions-form">
                                 <div className="form-check form-switch">
@@ -39,13 +39,10 @@ class Dashboard extends React.Component {
                         </div>
                     </div>
                     <div className="col-sm-6">
-                        <div className="card card-body text-dark">
+                        <div className="card card-body text-dark my-4">
                             <h2 className="text-center my-3">Avatar</h2>
-                            <div>
-                                <p>Current Avatar:</p>
-                                <div className="avatar-preview">
-                                    <img src="/assets/img/defaultpfp.png" alt="Avatar" className="avatar-preview profile-picture rounded" />
-                                </div>
+                            <div className="avatar-preview mx-auto my-4">
+                                <img src="/assets/img/defaultpfp.png" alt="Avatar" className="avatar-preview profile-picture rounded" />
                             </div>
                             <form action="/settings/update-avatar" method="POST" id="account-avatar-form">
                                 <div className="form-group">
@@ -57,10 +54,12 @@ class Dashboard extends React.Component {
                             </form>
                         </div>
                     </div>
-                </div>
-                <div className="card card-body text-dark">
-                    <a type="button" href="/auth/reset" className="btn btn-primary">Reset Password</a>
-                    <a type="button" href="/auth/delete" className="btn btn-danger mt-2">Delete Account</a>
+                    <div className="col">
+                        <div className="card card-body text-dark">
+                            <a type="button" href="/auth/reset" className="btn btn-primary">Reset Password</a>
+                            <a type="button" href="/auth/delete" className="btn btn-danger mt-2">Delete Account</a>
+                        </div>
+                    </div>
                 </div>
             </main>
         );
