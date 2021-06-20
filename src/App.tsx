@@ -22,6 +22,10 @@ import Settings from './pages/profile/Settings';
 import ToS from './pages/legal/ToS';
 import PrivacyPolicy from './pages/legal/PrivacyPolicy';
 
+import ChatWidget from './widgets/Chat';
+
+import Chat from './Chat';
+
 import Error404 from './404';
 
 import '../public/assets/scss/index.scss';
@@ -32,7 +36,11 @@ class App extends React.Component {
     render = () => {
         return (
             <div id="app" className="text-light d-flex flex-column h-100">
-                {!window.location.pathname.split(`/`).includes(`widget`) && <Header />}
+                {
+                    !window.location.pathname.split(`/`).includes(`widget`) &&
+                    !window.location.pathname.split(`/`).includes(`chat`) &&
+                     <Header />
+                }
                 <Router>
                     <Switch>
                         {/* Landing Page */}
@@ -66,13 +74,29 @@ class App extends React.Component {
                             <PrivacyPolicy />
                         </Route>
 
+                        {/* Chat */}
+                        <Route path ="/chat">
+                            < Chat />
+                        </Route>
+
+                        {/* Widgets */}
+                        <Route path="/widget">
+                            <Route exact path="/widget/chat">
+                                <ChatWidget />
+                            </Route>
+                        </Route>
+
                         {/* Error Handler */}
                         <Route path="/">
                             <Error404 />
                         </Route>
                     </Switch>
                 </Router>
-                {!window.location.pathname.split(`/`).includes(`widget`) && <Footer />}
+                {
+                    !window.location.pathname.split(`/`).includes(`widget`) &&
+                    !window.location.pathname.split(`/`).includes(`chat`) &&
+                    <Footer />
+                }
             </div>
         );
     }
