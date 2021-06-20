@@ -6,7 +6,7 @@ import $ from 'jquery';
 declare const API_URL: string;
 
 $(() => {
-    const { username } = useParams();
+    const username = useParams();
     fetch(`${API_URL}/api/public-stream-data/${username}`).then(data => data.json()).then((data: any) => {
         console.log(username);
         // if (!data) return console.log(`[ERROR]: Streamer Not Found...`);
