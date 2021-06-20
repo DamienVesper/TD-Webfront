@@ -54,9 +54,9 @@ class Login extends React.Component {
     render = () => {
         return (
             <main>
-                <div className="container mt-5">
+                <div className="container">
+                    <h1 className="text-center my-5">Log In</h1>
                     <div className="card card-body text-dark">
-                        <h1 className="text-center">Log In</h1>
                         <form action="/auth/login" method="POST" id="login-form">
                             <div id="login-error" className="alert alert-danger alert-dismissible fade show" role="alert">
                                 <span id="login-error-message"></span>

@@ -55,8 +55,8 @@ class Signup extends React.Component {
         return (
             <main>
                 <div className="container mt-5">
+                    <h1 className="text-center my-5">Sign Up</h1>
                     <div className="card card-body text-dark">
-                        <h1 className="text-center">Sign Up</h1>
                         <form action="/auth/signup" method="POST" id="signup-form">
                             <div id="signup-error" className="alert alert-danger alert-dismissible fade show" role="alert">
                                 <span id="signup-error-message"></span>
