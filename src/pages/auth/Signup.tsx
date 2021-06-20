@@ -40,7 +40,7 @@ $(() => {
                 console.log(`[ACCOUNT SERVER]: ${JSON.stringify(res.success)}`);
 
                 setTimeout(() => {
-                    window.location.href = `${window.location.protocol}//${window.location.host}/login`;
+                    window.location.href = `${window.location.protocol}//${window.location.host}/auth/login`;
                 }, 1e4);
             }
         });
@@ -57,9 +57,9 @@ class Signup extends React.Component {
                 <div className="container mt-5">
                     <div className="card card-body text-dark">
                         <h1 className="text-center">Sign Up</h1>
-                        <form action="/auth/signup" method="POST" id="login-form">
+                        <form action="/auth/signup" method="POST" id="signup-form">
                             <div id="signup-error" className="alert alert-danger alert-dismissible fade show" role="alert">
-                                <span id="login-error-message"></span>
+                                <span id="signup-error-message"></span>
                             </div>
 
                             <div className="form-group mb-3">
@@ -82,7 +82,7 @@ class Signup extends React.Component {
                             <HCaptcha sitekey="b5bed0d5-a077-493d-9ae0-3a66e4d05a6c" />
 
                             <div className="d-grid gap-2 mt-3">
-                                <input type="submit" value="Submit" id="login-button" className="btn btn-primary" />
+                                <input type="submit" value="Submit" id="signup-button" className="btn btn-primary" />
                             </div>
                         </form>
                     </div>

@@ -19,6 +19,8 @@ import Signup from './pages/auth/Signup';
 import Dashboard from './pages/profile/Dashboard';
 import Settings from './pages/profile/Settings';
 
+import Streamer from './pages/Streamer';
+
 import ToS from './pages/legal/ToS';
 import PrivacyPolicy from './pages/legal/PrivacyPolicy';
 
@@ -84,6 +86,11 @@ class App extends React.Component {
                             <Route exact path="/widget/chat">
                                 <ChatWidget />
                             </Route>
+                        </Route>
+
+                        {/* Streamer Pages */}
+                        <Route path="/:streamer">
+                            <Streamer />
                         </Route>
 
                         {/* Error Handler */}
