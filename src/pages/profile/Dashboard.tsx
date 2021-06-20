@@ -20,7 +20,7 @@ class Dashboard extends React.Component {
                         <div className="col-sm-6">
                             <div className="card card-body text-dark mt-4">
                                 <h2 className="text-center my-3">Stream Settings</h2>
-                                <form action="/dashboard" method="post" id="dashboard-form">
+                                <form action="/dashboard" method="POST" id="dashboard-form">
                                     <div className="form-group mb-3">
                                         <label htmlFor="stream-title" className="form-label">Stream Title</label>
                                         <input type="text" id="stream-title" name="stream-title" className="form-control" placeholder="Enter a title" maxLength={74} />
@@ -59,7 +59,7 @@ class Dashboard extends React.Component {
                                 <h2 className="text-center my-3">Stream Key</h2>
 
                                 <label htmlFor="stream-key" className="form-label">Stream Key</label>
-                                <form action="/api/change-stream-key" method="post" id="streamkey-update-form">
+                                <form action="/settings/change-stream-key" method="POST" id="streamkey-update-form">
                                     <div className="form-group mb-3">
                                         <input type="password" className="form-control mb-2" id="stream-key" readOnly />
                                         <div className="form-check">
