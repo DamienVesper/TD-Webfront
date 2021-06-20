@@ -32,7 +32,7 @@ class App extends React.Component {
     render = () => {
         return (
             <div id="app" className="text-light d-flex flex-column h-100">
-                <Header />
+                {!window.location.pathname.split(`/`).includes(`widget`) && <Header />}
                 <Router>
                     <Switch>
                         {/* Landing Page */}
@@ -72,7 +72,7 @@ class App extends React.Component {
                         </Route>
                     </Switch>
                 </Router>
-                <Footer />
+                {!window.location.pathname.split(`/`).includes(`widget`) && <Footer />}
             </div>
         );
     }
