@@ -28,7 +28,7 @@ import ChatWidget from './widgets/Chat';
 
 import Chat from './Chat';
 
-import Error404 from './404';
+import Error404 from './errors/404';
 
 import '../public/assets/scss/index.scss';
 
@@ -89,7 +89,7 @@ class App extends React.Component {
                         </Route>
 
                         {/* Streamer Pages */}
-                        <Route path="/:streamer">
+                        <Route path="/:username">
                             <Streamer />
                         </Route>
 
