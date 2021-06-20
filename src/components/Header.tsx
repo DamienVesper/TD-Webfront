@@ -41,6 +41,9 @@ class Header extends React.Component {
                                     <a href="/tos" className={`nav-link ${window.location.pathname === `/tos` ? `active disabled` : ``}`}>ToS</a>
                                 </li>
                                 <li className="nav-item">
+                                    <a href="/privacy-policy" className={`nav-link ${window.location.pathname === `/privacy-policy` ? `active disabled` : ``}`}>Privacy Policy</a>
+                                </li>
+                                <li className="nav-item">
                                     <a href="https://discord.throwdown.tv/" target="_blank" rel="noreferrer" className="nav-link">Discord</a>
                                 </li>
                                 <li className="nav-item dropdown nav-profile-menu">

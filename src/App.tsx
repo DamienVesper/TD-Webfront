@@ -19,6 +19,9 @@ import Signup from './pages/auth/Signup';
 import Dashboard from './pages/profile/Dashboard';
 import Settings from './pages/profile/Settings';
 
+import ToS from './pages/legal/ToS';
+import PrivacyPolicy from './pages/legal/PrivacyPolicy';
+
 import Error404 from './404';
 
 import '../public/assets/scss/index.scss';
@@ -53,6 +56,14 @@ class App extends React.Component {
                         </Route>
                         <Route exact path="/settings">
                             <Settings />
+                        </Route>
+
+                        {/* Legal */}
+                        <Route exact path="/tos">
+                            <ToS />
+                        </Route>
+                        <Route exact path="/privacy-policy">
+                            <PrivacyPolicy />
                         </Route>
 
                         {/* Error Handler */}
