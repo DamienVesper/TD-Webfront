@@ -9,7 +9,7 @@ import '../../public/assets/scss/pages/chat.scss';
 declare const API_URL: string;
 
 $(() => {
-    $(`#chat-input`).keydown(e => {
+    $(`#chat-input`).trigger(`keydown`, (e: KeyboardEvent) => {
         if (e.key === `Enter`) e.preventDefault();
     });
 
