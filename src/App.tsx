@@ -42,6 +42,9 @@ import '../public/assets/scss/index.scss';
 
 import 'bootstrap';
 
+/**
+ * The application layout for the website.
+ */
 class App extends React.Component {
     render = () => {
         return (
@@ -86,7 +89,7 @@ class App extends React.Component {
 
                         {/* Chat */}
                         <Route path ="/chat">
-                            < Chat />
+                            <Chat />
                         </Route>
 
                         {/* Widgets */}
