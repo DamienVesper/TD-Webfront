@@ -60,7 +60,7 @@ $(() => {
                     if (e.key === `Enter`) sendChatMessage();
                 });
 
-                $(`#chat-send`).on(`click`, e => sendChatMessage());
+                $(`#chat-send`).on(`click`, () => sendChatMessage());
 
                 socket.on(`chatMessage`, data => {
                     const displayName = data.displayName;
@@ -108,7 +108,7 @@ $(() => {
                     DOMchatHistory.scrollTop = DOMchatHistory.scrollHeight - DOMchatHistory.offsetHeight;
                 });
 
-                socket.on(`commandMessage`, message => {
+                socket.on(`commandMessage`, (message: string) => {
                     const messageWrapper = $(`<div>`);
                     messageWrapper.addClass(`chat-message`);
 
