@@ -9,6 +9,14 @@ nav {
     width: 70px;
 }
 
+nav form a {
+    color: $white !important;
+}
+
+.nav-item.dropdown {
+    display: none;
+} 
+
 .profile-btn {
     background-color: var(--dblue);
 }

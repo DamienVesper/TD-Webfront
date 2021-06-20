@@ -7,9 +7,9 @@ declare const API_URL: string;
 
 $(() => {
     fetch(`${API_URL}/auth/authenticated`).then(data => data.json()).then((data: any) => {
-        if (!data.isLoggedIn) return $(`.nav-profile-menu`).hide();
+        if (data.isLoggedIn) return $(`.nav-profile-menu`).show();
         $(`.profile-settings-opt`).attr(`href`, `/${data.username}`);
-    }).catch(() => $(`.nav-profile-menu`).hide());
+    });
 });
 
 /**
@@ -87,6 +87,10 @@ class Header extends React.Component {
                                     </ul>
                                 </li>
                             </ul>
+                            <form className="d-flex">
+                                <a href="/auth/login" className="nav-link btn btn-success me-2">Login</a>
+                                <a href="/auth/signup" className="nav-link btn btn-primary">Sign Up</a>
+                            </form>
                         </div>
                     </div>
                 </nav>
