@@ -7,9 +7,9 @@ import HCaptcha from '@hcaptcha/react-hcaptcha';
 declare const API_URL: string;
 
 /**
- * Helper function to setup login page.
+ * Helper function for when page loads.
  */
-$(() => {
+const onPageLoad = () => {
     $(`#login-error`).hide();
     $(`#login-success`).hide();
 
@@ -45,7 +45,7 @@ $(() => {
             }
         });
     });
-});
+};
 
 /**
  * The login page.
@@ -85,6 +85,7 @@ class Login extends React.Component {
                         </form>
                     </div>
                 </div>
+                {$(() => onPageLoad())}
             </main>
         );
     }

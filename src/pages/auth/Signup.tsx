@@ -7,9 +7,9 @@ import HCaptcha from '@hcaptcha/react-hcaptcha';
 declare const API_URL: string;
 
 /**
- * Helper function to setup signup page.
+ * Helper function for when page loads.
  */
-$(() => {
+const onPageLoad = () => {
     $(`#signup-error`).hide();
 
     $(`#signup-button`).on(`click`, e => {
@@ -45,7 +45,7 @@ $(() => {
             }
         });
     });
-});
+};
 
 /**
  * The signup page.
@@ -87,6 +87,7 @@ class Signup extends React.Component {
                         </form>
                     </div>
                 </div>
+                {$(() => onPageLoad())}
             </main>
         );
     }

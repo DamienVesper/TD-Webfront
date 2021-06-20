@@ -8,7 +8,10 @@ import '../../public/assets/scss/pages/chat.scss';
 
 declare const API_URL: string;
 
-$(() => {
+/**
+ * Helper function for when page loads.
+ */
+const onPageLoad = () => {
     $(`#chat-input`).trigger(`keydown`, (e: KeyboardEvent) => {
         if (e.key === `Enter`) e.preventDefault();
     });
@@ -121,7 +124,7 @@ $(() => {
             });
         });
     });
-});
+};
 
 /**
  * The Chat page.
@@ -135,6 +138,7 @@ class Chat extends React.Component {
                     <textarea id="chat-input" placeholder="Send a message" className="form-control text-light" rows={1} maxLength={1000} />
                     <input type="submit" id="chat-send" className="btn btn-sm btn-secondary" value="Chat"/>
                 </form>
+                {$(() => onPageLoad())}
             </main>
         );
     }
