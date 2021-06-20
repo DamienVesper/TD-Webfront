@@ -5,17 +5,6 @@ import $ from 'jquery';
 
 declare const API_URL: string;
 
-const onPageLoad = () => {
-    fetch(`${API_URL}/auth/authenticated`).then(data => data.json()).then((data: any) => {
-        if (data.isLoggedIn) {
-            $(`.nav-profile-menu`).removeClass(`d-none`).addClass(`d-flex`);
-            $(`.profile-settings-opt`).attr(`href`, `/${data.username}`);
-        } else {
-            $(`.auth-btn-wrapper`).removeClass(`d-none`).addClass(`d-flex`);
-        }
-    });
-};
-
 /**
  * The header to appear at the top of every page.
  */
@@ -98,9 +87,19 @@ class Header extends React.Component {
                         </div>
                     </div>
                 </nav>
-                {$(() => onPageLoad())}
             </header>
         );
+    }
+
+    componentDidMount = () => {
+        fetch(`${API_URL}/auth/authenticated`).then(data => data.json()).then((data: any) => {
+            if (data.isLoggedIn) {
+                $(`.nav-profile-menu`).removeClass(`d-none`).addClass(`d-flex`);
+                $(`.profile-settings-opt`).attr(`href`, `/${data.username}`);
+            } else {
+                $(`.auth-btn-wrapper`).removeClass(`d-none`).addClass(`d-flex`);
+            }
+        });
     }
 }
 

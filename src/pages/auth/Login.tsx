@@ -7,47 +7,6 @@ import HCaptcha from '@hcaptcha/react-hcaptcha';
 declare const API_URL: string;
 
 /**
- * Helper function for when page loads.
- */
-const onPageLoad = () => {
-    $(`#login-error`).hide();
-    $(`#login-success`).hide();
-
-    $(`#login-button`).on(`click`, e => {
-        e.preventDefault();
-
-        $(`#login-button`).attr(`disabled`, `true`);
-        $(`#login-error`).hide();
-        $(`#login-success`).hide();
-
-        $.ajax({
-            type: `post`,
-            url: `${API_URL}/auth/login`,
-            data: $(`#login-form`).serialize()
-        }).then(res => {
-            if (res.errors) {
-                $(`#login-button`).attr(`disabled`, `false`);
-                $(`#login-error`).show();
-
-                // This needs a re-implementation.
-                // hcaptcha.reset();
-
-                $(`#login-error-message`).text(res.errors);
-                console.error(`[ACCOUNT SERVER]: ${JSON.stringify(res.errors)}`);
-            } else if (res.success) {
-                $(`#login-button`).val(`Logged in, redirecting...`);
-                $(`#login-success`).show();
-
-                $(`#login-success-message`).text(res.success);
-                console.log(`[ACCOUNT SERVER]: ${JSON.stringify(res.success)}`);
-
-                window.location.reload();
-            }
-        });
-    });
-};
-
-/**
  * The login page.
  */
 class Login extends React.Component {
@@ -85,9 +44,46 @@ class Login extends React.Component {
                         </form>
                     </div>
                 </div>
-                {$(() => onPageLoad())}
             </main>
         );
+    }
+
+    componentDidMount = () => {
+        $(`#login-error`).hide();
+        $(`#login-success`).hide();
+
+        $(`#login-button`).on(`click`, e => {
+            e.preventDefault();
+
+            $(`#login-button`).attr(`disabled`, `true`);
+            $(`#login-error`).hide();
+            $(`#login-success`).hide();
+
+            $.ajax({
+                type: `post`,
+                url: `${API_URL}/auth/login`,
+                data: $(`#login-form`).serialize()
+            }).then(res => {
+                if (res.errors) {
+                    $(`#login-button`).attr(`disabled`, `false`);
+                    $(`#login-error`).show();
+
+                    // This needs a re-implementation.
+                    // hcaptcha.reset();
+
+                    $(`#login-error-message`).text(res.errors);
+                    console.error(`[ACCOUNT SERVER]: ${JSON.stringify(res.errors)}`);
+                } else if (res.success) {
+                    $(`#login-button`).val(`Logged in, redirecting...`);
+                    $(`#login-success`).show();
+
+                    $(`#login-success-message`).text(res.success);
+                    console.log(`[ACCOUNT SERVER]: ${JSON.stringify(res.success)}`);
+
+                    window.location.reload();
+                }
+            });
+        });
     }
 }
 

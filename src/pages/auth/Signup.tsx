@@ -7,47 +7,6 @@ import HCaptcha from '@hcaptcha/react-hcaptcha';
 declare const API_URL: string;
 
 /**
- * Helper function for when page loads.
- */
-const onPageLoad = () => {
-    $(`#signup-error`).hide();
-
-    $(`#signup-button`).on(`click`, e => {
-        e.preventDefault();
-
-        $(`#signup-button`).attr(`disabled`, `true`);
-        $(`#signup-error`).hide();
-
-        $.ajax({
-            type: `post`,
-            url: `${API_URL}/auth/signup`,
-            data: $(`#signup-form`).serialize()
-        }).then(res => {
-            if (res.errors) {
-                $(`#signup-button`).attr(`disabled`, `false`);
-                $(`#signup-error`).show();
-
-                // This needs a re-implementation.
-                // hcaptcha.reset();
-
-                $(`#signup-error-message`).text(res.errors);
-                console.error(`[ACCOUNT SERVER]: ${JSON.stringify(res.errors)}`);
-            } else if (res.success) {
-                $(`#signup-button`).attr(`disabled`, `true`);
-                $(`#signup-error`).show();
-
-                $(`#signup-error-message`).text(res.success);
-                console.log(`[ACCOUNT SERVER]: ${JSON.stringify(res.success)}`);
-
-                setTimeout(() => {
-                    window.location.href = `${window.location.protocol}//${window.location.host}/auth/login`;
-                }, 1e4);
-            }
-        });
-    });
-};
-
-/**
  * The signup page.
  */
 class Signup extends React.Component {
@@ -87,9 +46,46 @@ class Signup extends React.Component {
                         </form>
                     </div>
                 </div>
-                {$(() => onPageLoad())}
             </main>
         );
+    }
+
+    componentDidMount = () => {
+        $(`#signup-error`).hide();
+
+        $(`#signup-button`).on(`click`, e => {
+            e.preventDefault();
+
+            $(`#signup-button`).attr(`disabled`, `true`);
+            $(`#signup-error`).hide();
+
+            $.ajax({
+                type: `post`,
+                url: `${API_URL}/auth/signup`,
+                data: $(`#signup-form`).serialize()
+            }).then(res => {
+                if (res.errors) {
+                    $(`#signup-button`).attr(`disabled`, `false`);
+                    $(`#signup-error`).show();
+
+                    // This needs a re-implementation.
+                    // hcaptcha.reset();
+
+                    $(`#signup-error-message`).text(res.errors);
+                    console.error(`[ACCOUNT SERVER]: ${JSON.stringify(res.errors)}`);
+                } else if (res.success) {
+                    $(`#signup-button`).attr(`disabled`, `true`);
+                    $(`#signup-error`).show();
+
+                    $(`#signup-error-message`).text(res.success);
+                    console.log(`[ACCOUNT SERVER]: ${JSON.stringify(res.success)}`);
+
+                    setTimeout(() => {
+                        window.location.href = `${window.location.protocol}//${window.location.host}/auth/login`;
+                    }, 1e4);
+                }
+            });
+        });
     }
 }
 
