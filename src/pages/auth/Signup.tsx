@@ -9,8 +9,8 @@ declare const API_URL: string;
 /**
  * Helper function to setup signup page.
  */
-const setupSignup = () => {
-    $(() => $(`#signup-error`).hide());
+$(() => {
+    $(`#signup-error`).hide();
 
     $(`#signup-button`).on(`click`, e => {
         e.preventDefault();
@@ -45,7 +45,7 @@ const setupSignup = () => {
             }
         });
     });
-};
+});
 
 /**
  * The signup page.
@@ -87,7 +87,6 @@ class Signup extends React.Component {
                         </form>
                     </div>
                 </div>
-                {setupSignup()}
             </main>
         );
     }

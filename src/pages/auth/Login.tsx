@@ -9,11 +9,9 @@ declare const API_URL: string;
 /**
  * Helper function to setup login page.
  */
-const setupLogin = () => {
-    $(() => {
-        $(`#login-error`).hide();
-        $(`#login-success`).hide();
-    });
+$(() => {
+    $(`#login-error`).hide();
+    $(`#login-success`).hide();
 
     $(`#login-button`).on(`click`, e => {
         e.preventDefault();
@@ -47,7 +45,7 @@ const setupLogin = () => {
             }
         });
     });
-};
+});
 
 /**
  * The login page.
@@ -87,7 +85,6 @@ class Login extends React.Component {
                         </form>
                     </div>
                 </div>
-                {setupLogin()}
             </main>
         );
     }
