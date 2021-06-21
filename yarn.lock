@@ -6156,6 +6156,14 @@ videojs-font@3.2.0:
   resolved "https://registry.yarnpkg.com/videojs-font/-/videojs-font-3.2.0.tgz#212c9d3f4e4ec3fa7345167d64316add35e92232"
   integrity sha512-g8vHMKK2/JGorSfqAZQUmYYNnXmfec4MLhwtEFS+mMs2IDY398GLysy6BH6K+aS1KMNu/xWZ8Sue/X/mdQPliA==
 
+videojs-react-enhanced@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/videojs-react-enhanced/-/videojs-react-enhanced-0.3.1.tgz#07b385d2317a9f1614c400c91dc7eb75378f3aac"
+  integrity sha512-JxU49PnEzoVLPUMJEUm/2fOYUk87IwP2J5IvNXJV5U8peKCHDeaT16qjLXQUD4G50CUjSJ/suyx1R90VYAU7fQ==
+  dependencies:
+    "@babel/runtime" "^7.11.2"
+    prop-types "^15.7.2"
+
 videojs-vtt.js@^0.15.3:
   version "0.15.3"
   resolved "https://registry.yarnpkg.com/videojs-vtt.js/-/videojs-vtt.js-0.15.3.tgz#84260393b79487fcf195d9372f812d7fab83a993"

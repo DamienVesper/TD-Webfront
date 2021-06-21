@@ -1,22 +1,21 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
-import VideoJS from 'video.js';
+import VREPlayer from 'videojs-react-enhanced';
+
+import 'video.js/dist/video-js.css';
+
+import ChatWidget from '../widgets/Chat';
 
 declare const API_URL: string;
 
-const options = {
-    autoplay: true,
-    playbackRates: [0.5, 1, 1.25, 1.5, 2],
-    width: 1280,
-    height: 720,
-    fluid: true,
+const playerOptions: VREPlayer.IPlayerOptions = {
+    src: `http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4`,
     controls: true,
-    sources: [
-        {
-            src: `//vjs.zencdn.net/v/oceans.mp4`,
-            type: `video/mp4`
-        }
-    ]
+    autoplay: `play`
+};
+
+const videojsOptions: VREPlayer.IVideoJsOptions = {
+    fluid: true
 };
 
 /**
@@ -28,7 +27,14 @@ class Streamer extends React.Component {
             <main className="text-center">
                 <div className="stream-overlay">
                     <div className="stream-popout">
-                        <VideoJS {...options} />
+                        <VREPlayer
+                            playerOptions={playerOptions}
+                            videojsOptions={videojsOptions}
+                            onReady={(player) => console.log(player)}
+                            onPlay={(e, _, second) => console.log(`Play!`)}
+                            onPause={(e, _, second) => console.log(`Pause!`)}
+                            onEnded={(e, _) => console.log(`Ended!`)}
+                        />
 
                         <ul className="mobile-tabs nav nav-tabs" role="tablist">
                             <li className="nav-item">
@@ -78,7 +84,7 @@ class Streamer extends React.Component {
                             <span className="stream-title mobile-active lead"></span>
                             <div id="stream-description" />
                         </div>
-                        <iframe className="chat-popout" frameBorder="0" height="720px"></iframe>
+                        <ChatWidget />
                     </div>
                 </div>
             </main>
