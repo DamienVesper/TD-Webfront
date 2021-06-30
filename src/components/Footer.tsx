@@ -11,7 +11,7 @@ class Footer extends React.Component {
         return (
             <footer className="footer mt-auto py-3">
                 <div className="container text-center">
-                    <span>&copy; Datcen Haven Technologies Private Limited</span>
+                    <span>&copy; Throwdown Media</span>
                 </div>
             </footer>
         );
