@@ -1,8 +1,7 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
-import ReactPlayer from 'react-player';
 
-import 'video.js/dist/video-js.css';
+import ReactPlayer from 'react-player';
 
 import ChatWidget from '../widgets/Chat';
 import Page404 from '../errors/404';
@@ -12,10 +11,23 @@ declare const API_URL: string;
 /**
  * The Home page.
  */
-class Streamer extends React.Component {
+class Streamer extends React.Component<{}, { showOverlay: boolean }> {
+    constructor (props) {
+        super(props);
+
+        this.state = {
+            showOverlay: undefined
+        };
+    }
+
+    updateState = (val: boolean) => {
+        this.setState({ showOverlay: val });
+    }
+
     render = () => {
-        fetch(`${API_URL}/streams/data?username=${window.location.pathname.split(`/`)[2]}`).then(data => data.json()).then(data => {
-            return !data.username
+        return this.state.showOverlay === undefined
+            ? ``
+            : this.state.showOverlay === false
                 ? <Page404 />
                 : (
                     <main className="text-center">
@@ -86,14 +98,14 @@ class Streamer extends React.Component {
                         </div>
                     </main>
                 );
-        });
     }
 
     componentDidMount = () => {
         const username = window.location.pathname.slice(1);
-        fetch(`${API_URL}/api/public-stream-data/${username}`).then(data => data.json()).then((data: any) => {
-            if (!data) return console.error(`[ERROR]: Streamer Not Found.`);
-        });
+        fetch(`${API_URL}/streams/data?username=${username}`).then(data => data.json()).then(data => {
+            if (!data) this.updateState(false);
+            else this.updateState(true);
+        }).catch(() => this.updateState(false));
     }
 }
 
