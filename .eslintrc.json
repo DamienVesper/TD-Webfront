@@ -30,6 +30,6 @@
         "@typescript-eslint/no-use-before-define": 2,
         "prefer-arrow-callback": 2,
         "prefer-template": 2,
-        "curly": 0,
+        "curly": 0
     }
 }
