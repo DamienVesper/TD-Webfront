@@ -56,13 +56,14 @@
     "@hcaptcha/react-hcaptcha": "^0.3.6",
     "@popperjs/core": "^2.9.2",
     "bootstrap": "^5.0.2",
+    "hls.js": "^1.0.7",
     "jquery": "^3.6.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hot-loader": "^4.13.0",
+    "react-player": "^2.9.0",
     "react-router-dom": "^5.2.0",
     "socket.io-client": "^4.1.2",
-    "video.js": "^7.12.3",
-    "videojs-react-enhanced": "^0.3.1"
+    "video.js": "^7.12.3"
   }
 }
