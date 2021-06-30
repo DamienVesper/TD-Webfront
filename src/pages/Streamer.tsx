@@ -102,7 +102,7 @@ class Streamer extends React.Component<{}, { showOverlay: boolean }> {
 
     componentDidMount = () => {
         const username = window.location.pathname.slice(1);
-        fetch(`${API_URL}/stream/data?username=${username}`).then(data => data.json()).then(data => {
+        fetch(`${API_URL}/stream/data?username=${username}`).then(data => !data.toString().startsWith(`<`) && data.json()).then(data => {
             if (!data) this.updateState(false);
             else this.updateState(true);
         }).catch(() => this.updateState(false));
