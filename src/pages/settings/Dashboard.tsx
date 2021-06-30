@@ -76,15 +76,15 @@ class Dashboard extends React.Component {
                                 <h2 className="text-center mt-3">RTMP Servers</h2>
                                 <div className="rtmp-servers text-center">
                                     <div className="card p-2 m-3">
-                                        <span><b>US 01:</b></span>
+                                        <span><strong>US 01:</strong></span>
                                         <span><code>rtmp://us01.throwdown.tv/live</code></span>
                                     </div>
                                     <div className="card p-2 m-3">
-                                        <span><b>EU 01:</b></span>
+                                        <span><strong>EU 01:</strong></span>
                                         <span><code>rtmp://eu01.throwdown.tv/live</code></span>
                                     </div>
                                     <div className="card p-2 m-3">
-                                        <span><b>EU 02:</b></span>
+                                        <span><strong>EU 02:</strong></span>
                                         <span><code>rtmp://eu02.throwdown.tv/live</code></span>
                                     </div>
                                 </div>
