@@ -22,12 +22,12 @@ class Signup extends React.Component {
                             </div>
 
                             <div className="form-group mb-3">
-                                <label htmlFor="username" className="form-label">Username</label>
-                                <input type="username" name="signup-username" id="username" className="form-control mb-3" placeholder="Username" autoComplete="username" required />
-                            </div>
-                            <div className="form-group mb-3">
                                 <label htmlFor="email" className="form-label">Email</label>
                                 <input type="email" name="signup-email" id="email" className="form-control mb-3" placeholder="Email" autoComplete="email" required />
+                            </div>
+                            <div className="form-group mb-3">
+                                <label htmlFor="username" className="form-label">Username</label>
+                                <input type="username" name="signup-username" id="username" className="form-control mb-3" placeholder="Username" autoComplete="username" required />
                             </div>
                             <div className="form-group mb-3">
                                 <label htmlFor="password" className="form-label">Password</label>
