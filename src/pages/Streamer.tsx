@@ -1,7 +1,6 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
-
-import ReactPlayer from 'react-player';
+import ReactHLS from 'react-hls';
 
 import ChatWidget from '../widgets/Chat';
 import Page404 from '../errors/404';
@@ -11,12 +10,13 @@ declare const API_URL: string;
 /**
  * The Home page.
  */
-class Streamer extends React.Component<{}, { showOverlay: boolean }> {
+class Streamer extends React.Component<{}, { showOverlay: boolean, rtmpServer: String }> {
     constructor (props) {
         super(props);
 
         this.state = {
-            showOverlay: undefined
+            showOverlay: undefined,
+            rtmpServer: undefined
         };
     }
 
@@ -24,7 +24,12 @@ class Streamer extends React.Component<{}, { showOverlay: boolean }> {
         this.setState({ showOverlay: val });
     }
 
+    updateRtmp = (val: String) => {
+        this.setState({ rtmpServer: val });
+    }
+
     render = () => {
+        const rtmpURL = `https://video-${this.state.rtmpServer}.throwdown.tv/${window.location.pathname.slice(1)}/index.m3u8`;
         return this.state.showOverlay === undefined
             ? ``
             : this.state.showOverlay === false
@@ -33,17 +38,11 @@ class Streamer extends React.Component<{}, { showOverlay: boolean }> {
                     <main className="text-center">
                         <div className="stream-overlay">
                             <div className="stream-popout">
-                                <ReactPlayer className='react-player'
-                                    url="https://bitmovin-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8"
-                                    playing
+                                <ReactHLS
+                                    url={rtmpURL}
+                                    autoplay={true}
                                     width='1280'
                                     height='720'
-                                    controls
-                                    config={{
-                                        file: {
-                                            forceHLS: true
-                                        }
-                                    }}
                                 />
                                 <ul className="mobile-tabs nav nav-tabs" role="tablist">
                                     <li className="nav-item">
@@ -105,6 +104,7 @@ class Streamer extends React.Component<{}, { showOverlay: boolean }> {
         fetch(`${API_URL}/stream/data?username=${username}`).then(data => !data.toString().startsWith(`<`) && data.json()).then(data => {
             if (!data) this.updateState(false);
             else this.updateState(true);
+            this.updateRtmp(data.rtmpServer);
         }).catch(() => this.updateState(false));
     }
 }
