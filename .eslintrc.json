@@ -19,11 +19,6 @@
         "react",
         "@typescript-eslint"
     ],
-    "settings": {
-        "react": {
-            "version": "detect"
-        }
-    },
     "rules": {
         "indent": ["error", 4, { "SwitchCase": 1 }],
         "semi": [2, "always"],
@@ -33,5 +28,10 @@
         "prefer-arrow-callback": 2,
         "prefer-template": 2,
         "curly": 0
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
     }
 }
