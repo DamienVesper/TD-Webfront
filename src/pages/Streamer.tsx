@@ -1,7 +1,6 @@
 import React from 'react';
 import { hot } from 'react-hot-loader';
-import ReactHLS from 'react-hls';
-
+import ReactHLSPlayer from 'react-hls-player';
 import ChatWidget from '../widgets/Chat';
 import Page404 from '../errors/404';
 
@@ -38,11 +37,18 @@ class Streamer extends React.Component<{}, { showOverlay: boolean, rtmpServer: S
                     <main className="text-center">
                         <div className="stream-overlay">
                             <div className="stream-popout">
-                                <ReactHLS
-                                    url={rtmpURL}
-                                    autoplay={true}
+                                <ReactHLSPlayer
+                                    src={rtmpURL}
+                                    autoPlay={true}
+                                    controls={true}
+                                    playerRef={null}
                                     width='1280'
                                     height='720'
+                                    hlsConfig={{
+                                        maxLoadingDelay: 3,
+                                        minAutoBitrate: 0,
+                                        lowLatencyMode: true
+                                    }}
                                 />
                                 <ul className="mobile-tabs nav nav-tabs" role="tablist">
                                     <li className="nav-item">
