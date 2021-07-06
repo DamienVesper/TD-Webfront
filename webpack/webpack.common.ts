@@ -59,22 +59,7 @@ const config: Configuration = {
         extensions: [`*`, `.js`, `.jsx`, `.ts`, `.tsx`]
     },
 
-    output: {
-        path: path.resolve(__dirname, `../dist`),
-        publicPath: `/dist`,
-        filename: `bundle.min.js`
-    },
-
-    devServer: {
-        contentBase: path.resolve(__dirname, `../public`),
-        historyApiFallback: true,
-        port: 3000,
-        publicPath: `http://localhost:3000/dist`,
-        hotOnly: true
-    },
-
     plugins: [
-        new Webpack.HotModuleReplacementPlugin(),
         new Webpack.ProgressPlugin()
     ]
 };
