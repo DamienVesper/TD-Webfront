@@ -3,6 +3,7 @@ import common from './webpack.common';
 
 import HTMLWebpackPlugin from 'html-webpack-plugin';
 import { DefinePlugin } from 'webpack';
+import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
 
 import * as path from 'path';
 
@@ -44,6 +45,7 @@ const config = merge(common, {
                 minifyURLs: true
             }
         }),
+        new WebpackManifestPlugin(),
         new DefinePlugin({ API_URL: `\`https://throwdown.tv/api\`` })
     ]
 });
