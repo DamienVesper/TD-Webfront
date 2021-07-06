@@ -161,6 +161,7 @@ class PrivacyPolicy extends React.Component {
                         </ul>
                     </div>
                 </div>
+                <br />
             </main>
         );
     }
