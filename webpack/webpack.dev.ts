@@ -16,7 +16,7 @@ const config = merge(common, {
             template: path.resolve(__dirname, `../src/index.html`)
         }),
         new Webpack.HotModuleReplacementPlugin(),
-        new Webpack.DefinePlugin({ API_URL: `\`http://localhost:8080/api\`` })
+        new Webpack.DefinePlugin({ API_URL: `\`http://localhost:8080\`` })
     ],
 
     output: {

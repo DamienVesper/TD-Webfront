@@ -41,7 +41,6 @@ class Streamer extends React.Component<{}, { showOverlay: boolean, rtmpServer: S
                                     src={rtmpURL}
                                     autoPlay={true}
                                     controls={true}
-                                    playerRef={null}
                                     width='1280'
                                     height='720'
                                     hlsConfig={{
