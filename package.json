@@ -41,7 +41,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-react": "^7.24.0",
-    "sass": "^1.35.1",
+    "sass": "^1.35.2",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.0.0",
     "ts-loader": "^9.2.3",
