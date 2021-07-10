@@ -2,13 +2,24 @@ import merge from 'webpack-merge';
 import common from './webpack.common';
 
 import HTMLWebpackPlugin from 'html-webpack-plugin';
-import { DefinePlugin } from 'webpack';
 import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
+
+import MiniCSSExtractPlugin from 'mini-css-extract-plugin';
+import CSSMinimizerPlugin from 'css-minimizer-webpack-plugin';
 
 import * as path from 'path';
 
 const config = merge(common, {
     mode: `production`,
+
+    module: {
+        rules: [
+            {
+                test: /\.s[ac]ss$/i,
+                use: [MiniCSSExtractPlugin.loader, `css-loader`, `sass-loader`]
+            }
+        ]
+    },
 
     output: {
         path: path.resolve(__dirname, `../dist`),
@@ -24,13 +35,18 @@ const config = merge(common, {
 
         runtimeChunk: {
             name: (entrypoint: any) => `runtime-${entrypoint.name}`
-        }
+        },
+
+        minimizer: [
+            `...`,
+            new CSSMinimizerPlugin()
+        ]
     },
 
     plugins: [
         new HTMLWebpackPlugin({
             inject: true,
-            template: path.resolve(__dirname, `../src/index.html`),
+            template: path.resolve(__dirname, `../public/index.html`),
 
             minify: {
                 removeComments: true,
@@ -46,7 +62,7 @@ const config = merge(common, {
             }
         }),
         new WebpackManifestPlugin(),
-        new DefinePlugin({ API_URL: `\`https://throwdown.tv/api\`` })
+        new MiniCSSExtractPlugin()
     ]
 });
 
