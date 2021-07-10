@@ -3,6 +3,8 @@ import { hot } from 'react-hot-loader';
 
 import $ from 'jquery';
 
+import Logo from '../../public/assets/img/header-logo.png';
+
 declare const API_URL: string;
 
 /**
@@ -15,7 +17,7 @@ class Header extends React.Component {
                 <nav className="navbar navbar-expand-lg navbar-dark">
                     <div className="container-fluid">
                         <a href="/" className={window.location.href === `/` ? `disabled` : ``}>
-                            <img src="/assets/img/header-logo.png" alt="Throwdown.TV logo" className="navbar-brand header-logo" />
+                            <img src={Logo} alt="Throwdown.TV logo" className="navbar-brand header-logo" />
                         </a>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
