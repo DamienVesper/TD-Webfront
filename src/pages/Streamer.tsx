@@ -28,7 +28,7 @@ class Streamer extends React.Component<{}, { showOverlay: boolean, rtmpServer: S
     }
 
     render = () => {
-        const rtmpURL = `https://video-${this.state.rtmpServer}.throwdown.tv/${window.location.pathname.slice(1)}/index.m3u8`;
+        // const rtmpURL = `https://video-${this.state.rtmpServer}.throwdown.tv/${window.location.pathname.slice(1)}/index.m3u8`;
         return this.state.showOverlay === undefined
             ? ``
             : this.state.showOverlay === false

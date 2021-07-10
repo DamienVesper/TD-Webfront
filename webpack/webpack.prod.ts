@@ -7,6 +7,7 @@ import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
 import MiniCSSExtractPlugin from 'mini-css-extract-plugin';
 import CSSMinimizerPlugin from 'css-minimizer-webpack-plugin';
 
+import * as Webpack from 'webpack';
 import * as path from 'path';
 
 const config = merge(common, {
@@ -62,7 +63,8 @@ const config = merge(common, {
             }
         }),
         new WebpackManifestPlugin(),
-        new MiniCSSExtractPlugin()
+        new MiniCSSExtractPlugin(),
+        new Webpack.DefinePlugin({ API_URL: `\`https://throwdown.tv/api\`` })
     ]
 });
 
