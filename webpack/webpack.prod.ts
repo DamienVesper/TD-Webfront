@@ -25,7 +25,8 @@ const config = merge(common, {
     output: {
         path: path.resolve(__dirname, `../dist`),
         filename: `static/js/[name].[contenthash:8].js`,
-        chunkFilename: `static/js/[name].[contenthash:8].chunk.js`
+        chunkFilename: `static/js/[name].[contenthash:8].chunk.js`,
+        clean: true
     },
 
     optimization: {
