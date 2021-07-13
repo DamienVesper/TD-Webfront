@@ -31,7 +31,8 @@ const config = merge(common, {
     plugins: [
         new HTMLWebpackPlugin({
             inject: true,
-            template: path.resolve(__dirname, `../public/index.html`)
+            template: path.resolve(__dirname, `../public/index.html`),
+            favicon: `./public/favicon.ico`
         }),
         new Webpack.HotModuleReplacementPlugin(),
         new Webpack.DefinePlugin({ API_URL: `\`http://localhost:8080\`` })

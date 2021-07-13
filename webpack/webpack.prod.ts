@@ -49,6 +49,7 @@ const config = merge(common, {
         new HTMLWebpackPlugin({
             inject: true,
             template: path.resolve(__dirname, `../public/index.html`),
+            favicon: `./public/favicon.ico`,
 
             minify: {
                 removeComments: true,
