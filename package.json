@@ -19,9 +19,6 @@
   },
   "homepage": "https://github.com/ThrowdownTV/TD-Webfront#readme",
   "devDependencies": {
-    "@babel/core": "^7.14.6",
-    "@babel/preset-env": "^7.14.7",
-    "@babel/preset-react": "^7.14.5",
     "@types/bootstrap": "^5.0.16",
     "@types/jquery": "^3.5.5",
     "@types/mini-css-extract-plugin": "^2.0.1",
@@ -33,7 +30,6 @@
     "@types/webpack-dev-server": "^3.11.5",
     "@typescript-eslint/eslint-plugin": "^4.28.3",
     "@typescript-eslint/parser": "^4.28.3",
-    "babel-loader": "^8.2.2",
     "css-loader": "^6.0.0",
     "css-minimizer-webpack-plugin": "^3.0.2",
     "eslint": "^7.30.0",
