@@ -20,7 +20,7 @@
   "homepage": "https://github.com/ThrowdownTV/TD-Webfront#readme",
   "devDependencies": {
     "@babel/core": "^7.14.8",
-    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-env": "^7.14.8",
     "@babel/preset-react": "^7.14.5",
     "@types/bootstrap": "^5.0.16",
     "@types/jquery": "^3.5.5",
