@@ -54,7 +54,7 @@
   },
   "dependencies": {
     "@hcaptcha/react-hcaptcha": "^0.3.6",
-    "@popperjs/core": "^2.9.2",
+    "@popperjs/core": "^2.9.3",
     "bootstrap": "^5.0.2",
     "hls.js": "^1.0.7",
     "jquery": "^3.6.0",
