@@ -64,7 +64,7 @@ const config = merge(common, {
                 minifyURLs: true
             }
         }),
-        new WebpackManifestPlugin(),
+        new WebpackManifestPlugin({}),
         new MiniCSSExtractPlugin(),
         new Webpack.DefinePlugin({ API_URL: `\`https://throwdown.tv/api\`` })
     ]
