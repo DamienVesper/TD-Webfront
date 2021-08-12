@@ -56,7 +56,7 @@
     "@hcaptcha/react-hcaptcha": "^0.3.6",
     "@popperjs/core": "^2.9.3",
     "bootstrap": "^5.0.2",
-    "hls.js": "^1.0.7",
+    "hls.js": "^1.0.9",
     "jquery": "^3.6.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
