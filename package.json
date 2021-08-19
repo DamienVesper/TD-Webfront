@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/ThrowdownTV/TD-Webfront#readme",
   "devDependencies": {
-    "@types/bootstrap": "^5.1.1",
+    "@types/bootstrap": "^5.1.2",
     "@types/jquery": "^3.5.6",
     "@types/mini-css-extract-plugin": "^2.2.0",
     "@types/node": "^16.6.1",
