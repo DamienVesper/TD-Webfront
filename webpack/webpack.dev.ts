@@ -45,11 +45,15 @@ const config = merge(common, {
     },
 
     devServer: {
-        contentBase: path.resolve(__dirname, `../public`),
+        devMiddleware: {
+            publicPath: `http://localhost:3000`
+        },
+        static: {
+            directory: path.resolve(__dirname, `../public`)
+        },
         historyApiFallback: true,
         port: 3000,
-        publicPath: `http://localhost:3000`,
-        hotOnly: true
+        hot: `only`
     }
 });
 
